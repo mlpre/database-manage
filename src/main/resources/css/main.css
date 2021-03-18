@@ -1,0 +1,108 @@
+/*
+ * Copyright 2021 Minli
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+/**
+ * @author Minli
+ */
+.menu-bar {
+    /*-fx-background-color: white;*/
+    -fx-border-width: 0 0 0.5 0;
+    -fx-border-style: solid;
+    -fx-border-color: #cccccc;
+}
+
+.tree-view {
+    -fx-background-color: white;
+    -fx-border-width: 0.5 0.5 0.5 0.5;
+    -fx-border-style: solid;
+    -fx-border-color: #cccccc;
+}
+
+.tool-bar {
+    -fx-background-color: white;
+    -fx-border-width: 0.5 0.5 0.5 0.5;
+    -fx-border-style: solid;
+    -fx-border-color: #cccccc;
+}
+
+.tool-bar {
+    -fx-padding: 1;
+}
+
+
+.table-view {
+    -fx-background-color: transparent;
+}
+
+.column-header-background, .filler {
+    -fx-background-color: white;
+}
+
+.column-header {
+    -fx-background-color: #eeeeee;
+}
+
+.text-area {
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+.text-area .content {
+    -fx-background-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+.list-view {
+    -fx-background-color: transparent;
+    -fx-border-color: #dfdfdf;
+    -fx-border-width: 1 0 0 1;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+.table-view .text-field {
+    -fx-padding: 0;
+    -fx-border-width: 0;
+    -fx-background-insets: 0;
+    -fx-background-radius: 0;
+}
+
+.connect-button {
+    -fx-background-radius: 0;
+    -fx-background-color: #0078d7;
+    /*-fx-text-fill: white;*/
+    -fx-border-width: 1;
+    -fx-border-color: #0078d7;
+}
+
+.connect-button:hover {
+    -fx-border-width: 1;
+    -fx-border-color: derive(#0078d7, -30%);
+}
+
+.connect-button:pressed {
+    -fx-border-width: 1;
+    -fx-background-color: derive(#0078d7, -50%);
+}
+
+.text-field-table-cell {
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
