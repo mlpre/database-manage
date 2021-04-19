@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<StackPane fx:id="root" minHeight="600.0" minWidth="800.0" stylesheets="@../css/main.css" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ml.minli.controller.MainController">
+<StackPane fx:id="root" minHeight="600.0" minWidth="800.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ml.minli.controller.MainController">
     <children>
         <BorderPane>
             <top>
@@ -58,41 +58,41 @@
                     <children>
                         <ToolBar>
                             <items>
-                                <JFXButton mnemonicParsing="false" onAction="#execSql" text="执行">
+                                <Button mnemonicParsing="false" onAction="#execSql" text="执行">
                                     <graphic>
                                         <FontIcon iconColor="#61c22c" iconLiteral="fas-play" />
                                     </graphic>
-                                </JFXButton>
-                                <JFXButton mnemonicParsing="false" text="停止">
+                                </Button>
+                                <Button mnemonicParsing="false" text="停止">
                                     <graphic>
                                         <FontIcon iconColor="#d9534f" iconLiteral="fas-stop" />
                                     </graphic>
-                                </JFXButton>
-                                <JFXButton mnemonicParsing="false" text="导入">
+                                </Button>
+                                <Button mnemonicParsing="false" text="导入">
                                     <graphic>
                                         <FontIcon iconColor="#107c10" iconLiteral="fas-file-excel" />
                                     </graphic>
-                                </JFXButton>
+                                </Button>
                             </items>
                         </ToolBar>
                         <TextArea fx:id="sqlText" />
                         <ToolBar>
                             <items>
-                                <JFXButton mnemonicParsing="false" text="保存">
+                                <Button mnemonicParsing="false" text="保存">
                                     <graphic>
                                         <FontIcon iconColor="#61c22c" iconLiteral="fas-check" />
                                     </graphic>
-                                </JFXButton>
-                                <JFXButton mnemonicParsing="false" text="取消">
+                                </Button>
+                                <Button mnemonicParsing="false" text="取消">
                                     <graphic>
                                         <FontIcon iconColor="#d9534f" iconLiteral="fas-times" />
                                     </graphic>
-                                </JFXButton>
-                                <JFXButton mnemonicParsing="false" text="导出">
+                                </Button>
+                                <Button mnemonicParsing="false" text="导出">
                                     <graphic>
                                         <FontIcon iconColor="#107c10" iconLiteral="fas-file-export" />
                                     </graphic>
-                                </JFXButton>
+                                </Button>
                             </items>
                         </ToolBar>
                         <TableView fx:id="sqlColumn" VBox.vgrow="ALWAYS" />

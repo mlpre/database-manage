@@ -10,10 +10,10 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>15</maven.compiler.source>
-        <maven.compiler.target>15</maven.compiler.target>
-        <maven.compiler.compilerVersion>15</maven.compiler.compilerVersion>
-        <javafx.version>15.0.1</javafx.version>
+        <maven.compiler.source>16</maven.compiler.source>
+        <maven.compiler.target>16</maven.compiler.target>
+        <maven.compiler.compilerVersion>16</maven.compiler.compilerVersion>
+        <javafx.version>16</javafx.version>
     </properties>
 
     <repositories>
@@ -24,11 +24,6 @@
     </repositories>
 
     <dependencies>
-        <dependency>
-            <groupId>ml.minli</groupId>
-            <artifactId>javafx-ui-framework</artifactId>
-            <version>1.0</version>
-        </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
@@ -63,11 +58,6 @@
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
             <version>1.2.75</version>
-        </dependency>
-        <dependency>
-            <groupId>com.jfoenix</groupId>
-            <artifactId>jfoenix</artifactId>
-            <version>9.0.10</version>
         </dependency>
     </dependencies>
 

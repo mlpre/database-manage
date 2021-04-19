@@ -25,6 +25,7 @@ public class DatabaseManageApp {
 
     public static void main(String[] args) {
         Application.launch(MainUi.class, args);
+        System.exit(0);
     }
 
 }

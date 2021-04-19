@@ -13,7 +13,22 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package ml.minli.util;
+
+import java.io.InputStream;
+import java.net.URL;
 
 /**
  * @author Minli
  */
+public class ResourceUtil {
+
+    public static URL getResource(String name) {
+        return ResourceUtil.class.getClassLoader().getResource(name);
+    }
+
+    public static InputStream getInputStream(String name) {
+        return ResourceUtil.class.getClassLoader().getResourceAsStream(name);
+    }
+
+}

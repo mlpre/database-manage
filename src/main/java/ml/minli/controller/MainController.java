@@ -31,6 +31,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.TextFieldTableCell;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
@@ -38,10 +39,9 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import ml.minli.model.Constant;
 import ml.minli.model.DatabaseModel;
-import ml.minli.ui.util.SceneUtil;
 import ml.minli.util.DatabaseUtil;
-import ml.minli.ui.util.ResourceUtil;
 import ml.minli.util.BaseUtil;
+import ml.minli.util.ResourceUtil;
 import org.kordamp.ikonli.fontawesome5.FontAwesomeSolid;
 import org.kordamp.ikonli.javafx.FontIcon;
 
@@ -87,8 +87,8 @@ public class MainController implements Initializable {
         Stage stage = new Stage();
         stage.setResizable(false);
         stage.setTitle("连接MySQL");
-        Scene scene = SceneUtil.build(mysql);
-        scene.getStylesheets().addAll(ResourceUtil.getExternalForm("ui/css/alert.css"), ResourceUtil.getExternalForm("css/connect.css"));
+        Scene scene = new Scene(mysql);
+        stage.getIcons().add(new Image(ResourceUtil.getInputStream("img/logo.png")));
         stage.setScene(scene);
         stage.show();
     }

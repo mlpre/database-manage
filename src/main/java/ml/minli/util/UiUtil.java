@@ -18,7 +18,6 @@ package ml.minli.util;
 import javafx.application.Platform;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
-import ml.minli.ui.util.AlertUtil;
 
 /**
  * @author Minli
@@ -27,7 +26,7 @@ public class UiUtil {
 
     public static void AlertInformation(String headerText, String content) {
         Platform.runLater(() -> {
-            Alert alert = AlertUtil.build(Alert.AlertType.INFORMATION);
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setTitle("信息");
             alert.setHeaderText(headerText);
             alert.setContentText(content);
@@ -37,7 +36,7 @@ public class UiUtil {
 
     public static void AlertWarning(String headerText, String content) {
         Platform.runLater(() -> {
-            Alert alert = AlertUtil.build(Alert.AlertType.WARNING);
+            Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("警告");
             alert.setHeaderText(headerText);
             alert.setContentText(content);
@@ -47,7 +46,7 @@ public class UiUtil {
 
     public static void AlertError(String headerText, String content) {
         Platform.runLater(() -> {
-            Alert alert = AlertUtil.build(Alert.AlertType.ERROR);
+            Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("错误");
             alert.setHeaderText(headerText);
             alert.setContentText(content);
@@ -57,7 +56,7 @@ public class UiUtil {
 
     public static void AlertException(Exception exception) {
         Platform.runLater(() -> {
-            Alert alert = AlertUtil.build(Alert.AlertType.ERROR);
+            Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("错误");
             alert.setHeaderText("Exception");
             alert.setContentText(null);
