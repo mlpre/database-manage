@@ -20,9 +20,6 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * @author Minli
- */
 public class ImageUtilUi extends Application {
 
     @Override

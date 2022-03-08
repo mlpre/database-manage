@@ -10,18 +10,11 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>16</maven.compiler.source>
-        <maven.compiler.target>16</maven.compiler.target>
-        <maven.compiler.compilerVersion>16</maven.compiler.compilerVersion>
-        <javafx.version>16</javafx.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <maven.compiler.compilerVersion>17</maven.compiler.compilerVersion>
+        <javafx.version>17.0.2</javafx.version>
     </properties>
-
-    <repositories>
-        <repository>
-            <id>ml-repository</id>
-            <url>https://raw.githubusercontent.com/min-li/javafx-ui-framework/master/repository</url>
-        </repository>
-    </repositories>
 
     <dependencies>
         <dependency>
@@ -42,22 +35,22 @@
         <dependency>
             <groupId>org.kordamp.ikonli</groupId>
             <artifactId>ikonli-javafx</artifactId>
-            <version>11.5.0</version>
+            <version>12.3.0</version>
         </dependency>
         <dependency>
             <groupId>org.kordamp.ikonli</groupId>
             <artifactId>ikonli-fontawesome5-pack</artifactId>
-            <version>11.5.0</version>
+            <version>12.3.0</version>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.22</version>
+            <version>8.0.28</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.2.75</version>
+            <version>1.2.79</version>
         </dependency>
     </dependencies>
 
