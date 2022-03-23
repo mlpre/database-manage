@@ -14,6 +14,10 @@
         <maven.compiler.target>17</maven.compiler.target>
         <maven.compiler.compilerVersion>17</maven.compiler.compilerVersion>
         <javafx.version>17.0.2</javafx.version>
+        <ikonli.version>12.3.1</ikonli.version>
+        <mysql.connector.version>8.0.28</mysql.connector.version>
+        <fastjson.version>1.2.79</fastjson.version>
+        <maven.shade.version>3.2.4</maven.shade.version>
     </properties>
 
     <dependencies>
@@ -35,22 +39,22 @@
         <dependency>
             <groupId>org.kordamp.ikonli</groupId>
             <artifactId>ikonli-javafx</artifactId>
-            <version>12.3.0</version>
+            <version>${ikonli.version}</version>
         </dependency>
         <dependency>
             <groupId>org.kordamp.ikonli</groupId>
             <artifactId>ikonli-fontawesome5-pack</artifactId>
-            <version>12.3.0</version>
+            <version>${ikonli.version}</version>
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>8.0.28</version>
+            <version>${mysql.connector.version}</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>1.2.79</version>
+            <version>${fastjson.version}</version>
         </dependency>
     </dependencies>
 
@@ -59,7 +63,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>3.2.4</version>
+                <version>${maven.shade.version}</version>
                 <configuration>
                     <createDependencyReducedPom>false</createDependencyReducedPom>
                     <transformers>

@@ -1,8 +1,5 @@
 package ml.minli.model;
 
-/**
- * @auther Minli
- */
 public class Constant {
 
     public static final int SHOW_DATABASES = 0;

@@ -24,9 +24,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import ml.minli.model.Constant;
 import ml.minli.model.DatabaseModel;
-import ml.minli.util.DatabaseUtil;
-import ml.minli.util.BaseUtil;
-import ml.minli.util.ResourceUtil;
+import ml.minli.util.*;
 import org.kordamp.ikonli.fontawesome5.FontAwesomeSolid;
 import org.kordamp.ikonli.javafx.FontIcon;
 
@@ -65,7 +63,7 @@ public class MainController implements Initializable {
      * @throws Exception
      */
     public void mysql() throws Exception {
-        Parent mysql = FXMLLoader.load(ResourceUtil.getResource("fxml/connect.fxml"));
+        Parent mysql = FXMLLoader.load(ResourceUtil.getResource("fxml/connect.fxml"), LanguageUtil.resourceBundle);
         Stage stage = new Stage();
         stage.setResizable(false);
         stage.setTitle("连接MySQL");

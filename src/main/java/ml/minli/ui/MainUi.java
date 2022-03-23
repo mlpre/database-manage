@@ -26,7 +26,7 @@ public class MainUi extends Application {
     public void start(Stage stage) throws Exception {
         ConfigUtil.initConfig();
         Parent main = FXMLLoader.load(ResourceUtil.getResource("fxml/main.fxml"), LanguageUtil.resourceBundle);
-        stage.setTitle("数据库管理工具");
+        stage.setTitle(LanguageUtil.getValue("title"));
         FontIcon titleIcon = new FontIcon("fas-database");
         titleIcon.setIconColor(Paint.valueOf("#FFFFFF"));
         Scene scene = new Scene(main);
@@ -36,12 +36,12 @@ public class MainUi extends Application {
         stage.setMinHeight(600);
         stage.setOnCloseRequest(event -> {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-            alert.setTitle("退出");
+            alert.setTitle(LanguageUtil.getValue("exit"));
             FontIcon fontIcon = new FontIcon(FontAwesomeSolid.DATABASE);
             fontIcon.setIconSize(50);
             fontIcon.setIconColor(Color.valueOf("#338ecc"));
             alert.setGraphic(fontIcon);
-            alert.setContentText("是否退出?");
+            alert.setContentText(LanguageUtil.getValue("is.exit"));
             Optional<ButtonType> result = alert.showAndWait();
             result.ifPresent(buttonType -> {
                 if (buttonType == ButtonType.OK) {
