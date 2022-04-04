@@ -13,7 +13,7 @@
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <maven.compiler.compilerVersion>17</maven.compiler.compilerVersion>
-        <javafx.version>17.0.2</javafx.version>
+        <javafx.version>18</javafx.version>
         <ikonli.version>12.3.1</ikonli.version>
         <mysql.connector.version>8.0.28</mysql.connector.version>
         <fastjson.version>1.2.79</fastjson.version>
