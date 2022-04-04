@@ -1,3 +1,8 @@
-# 数据库管理工具
+# DatabaseManage)
 
-* 项目正在开发中！此项目的目的是为了做出一款简约但不简单的开源数据库管理工具。
+* Programming!
+
+* Screenshot
+
+![img](doc/screenshot-zh.png)
+![img](doc/screenshot-en.png)
