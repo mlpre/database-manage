@@ -5,7 +5,7 @@ import com.alibaba.fastjson.TypeReference;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import ml.minli.controller.MainController;
-import ml.minli.model.DatabaseModel;
+import ml.minli.model.Database;
 
 import java.sql.*;
 import java.util.*;
@@ -16,15 +16,15 @@ public class DatabaseUtil {
 
     public static LinkedHashMap<String, Connection> connectionList = new LinkedHashMap<>();
 
-    public synchronized static Connection getConnect(DatabaseModel databaseModel) {
+    public synchronized static Connection getConnect(Database database) {
         try {
             if (!connectionList.isEmpty() &&
-                    connectionList.get(databaseModel.getName()) != null &&
-                    !connectionList.get(databaseModel.getName()).isClosed()) {
-                connection = connectionList.get(databaseModel.getName());
+                    connectionList.get(database.getName()) != null &&
+                    !connectionList.get(database.getName()).isClosed()) {
+                connection = connectionList.get(database.getName());
             } else {
-                connection = DriverManager.getConnection(databaseModel.toConnectUrl(), databaseModel.getUsername(), databaseModel.getPassword());
-                connectionList.put(databaseModel.getName() + databaseModel.getDatabase(), connection);
+                connection = DriverManager.getConnection(database.toConnectUrl(), database.getUsername(), database.getPassword());
+                connectionList.put(database.getName(), connection);
                 return connection;
             }
         } catch (SQLException e) {
@@ -83,14 +83,14 @@ public class DatabaseUtil {
         }
     }
 
-    public static ObservableList<DatabaseModel> loadConnectHistory() {
-        ObservableList<DatabaseModel> observableList = FXCollections.observableArrayList();
+    public static ObservableList<Database> loadConnectHistory() {
+        ObservableList<Database> observableList = FXCollections.observableArrayList();
         Properties properties = ConfigUtil.properties;
         if (properties != null) {
             String databaseConnect = properties.getProperty("database-connect");
             if (databaseConnect != null && !databaseConnect.isEmpty()) {
                 String json = new String(Base64.getDecoder().decode(databaseConnect));
-                List<DatabaseModel> list = JSON.parseObject(json, new TypeReference<>() {
+                List<Database> list = JSON.parseObject(json, new TypeReference<>() {
                 });
                 observableList.addAll(list);
             }
@@ -99,8 +99,8 @@ public class DatabaseUtil {
     }
 
     public static void saveConnectHistory() {
-        ObservableList<DatabaseModel> connectHistoryList = MainController.connectHistoryList;
-        String json = JSON.toJSONString(connectHistoryList);
+        ObservableList<Database> databaseList = MainController.databaseList;
+        String json = JSON.toJSONString(databaseList);
         ConfigUtil.properties.setProperty("database-connect", Base64.getEncoder().encodeToString(json.getBytes()));
     }
 

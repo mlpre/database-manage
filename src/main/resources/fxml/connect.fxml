@@ -11,8 +11,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
-<VBox alignment="CENTER" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ml.minli.controller.ConnectController">
+<VBox fx:id="root" alignment="CENTER" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ml.minli.controller.ConnectController">
    <children>
       <HBox alignment="CENTER" prefHeight="50.0" VBox.vgrow="ALWAYS">
          <children>

@@ -16,6 +16,18 @@ public class Database {
 
     private String password;
 
+    public Database() {
+    }
+
+    public Database(String name, String url, int port, String param, String username, String password) {
+        this.name = name;
+        this.url = url;
+        this.port = port;
+        this.param = param;
+        this.username = username;
+        this.password = password;
+    }
+
     public String getName() {
         return name;
     }

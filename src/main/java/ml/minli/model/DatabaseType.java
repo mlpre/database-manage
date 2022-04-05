@@ -14,13 +14,13 @@ public enum DatabaseType {
         this.defaultParam = defaultParam;
     }
 
-    private String url;
+    private final String url;
 
-    private int defaultPort;
+    private final int defaultPort;
 
-    private String defaultDatabase;
+    private final String defaultDatabase;
 
-    private String defaultParam;
+    private final String defaultParam;
 
     public String getUrl() {
         return url;

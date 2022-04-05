@@ -10,7 +10,7 @@ import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import ml.minli.model.DatabaseModel;
+import ml.minli.model.Database;
 import ml.minli.model.DatabaseType;
 import ml.minli.util.DatabaseUtil;
 import ml.minli.util.LanguageUtil;
@@ -25,7 +25,7 @@ import java.util.ResourceBundle;
 public class ConnectController implements Initializable {
 
     @FXML
-    public StackPane root;
+    public VBox root;
     @FXML
     public TextField connectName;
     @FXML
@@ -55,15 +55,13 @@ public class ConnectController implements Initializable {
             @Override
             protected Void call() {
                 try {
-                    DatabaseUtil.getConnect(new DatabaseModel(
+                    DatabaseUtil.getConnect(new Database(
                             StringUtils.isNullOrEmpty(connectName.getText()) ? ip.getText() + "_" + port.getText() : connectName.getText(),
                             DatabaseType.MySQL.getUrl() + ip.getText(),
                             Integer.parseInt(port.getText()),
-                            "mysql",
                             DatabaseType.MySQL.getDefaultParam(),
                             username.getText(),
-                            password.getText(),
-                            0));
+                            password.getText()));
                     boolean isValid = DatabaseUtil.connection.isValid(1000);
                     if (isValid) {
                         UiUtil.alert(null, "连接成功", Alert.AlertType.INFORMATION);
@@ -103,16 +101,14 @@ public class ConnectController implements Initializable {
      * 保持数据库连接记录
      */
     public synchronized void save() {
-        MainController.connectHistoryList.add(
-                new DatabaseModel(
+        MainController.databaseList.add(
+                new Database(
                         StringUtils.isNullOrEmpty(connectName.getText()) ? ip.getText() + "_" + port.getText() : connectName.getText(),
                         DatabaseType.MySQL.getUrl() + ip.getText(),
                         Integer.parseInt(port.getText()),
-                        "mysql",
                         DatabaseType.MySQL.getDefaultParam(),
                         username.getText(),
-                        password.getText(),
-                        0)
+                        password.getText())
         );
         DatabaseUtil.saveConnectHistory();
         ((Stage) root.getScene().getWindow()).close();
@@ -150,4 +146,5 @@ public class ConnectController implements Initializable {
         paramList.getChildren().add(new Param(paramList, paramField.getText() + "=" + paramValue.getText()));
         paramList.getScene().getWindow().sizeToScene();
     }
+
 }
