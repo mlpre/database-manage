@@ -25,7 +25,7 @@ public class ImageUtilUi extends Application {
     @Override
     public void start(Stage stage) throws Exception {
         stage.initStyle(StageStyle.TRANSPARENT);
-        List<FontIcon> allFont = ImageUtilUi.getOneAwesomeFont("fas-arrows-alt-h", Color.valueOf("#338ecc"));
+        List<FontIcon> allFont = ImageUtilUi.getAllAwesomeFont();
         for (FontIcon fontIcon : allFont) {
             fontIcon.setIconSize(100);
             TextFlow textFlow = new TextFlow(fontIcon);
@@ -34,7 +34,7 @@ public class ImageUtilUi extends Application {
             scene.setFill(null);
             stage.setScene(scene);
             stage.show();
-            File file = new File("D://" + fontIcon.getIconLiteral() + ".png");
+            File file = new File("C://" + fontIcon.getIconLiteral() + ".png");
             WritableImage writableImage = new WritableImage((int) textFlow.getWidth(), (int) textFlow.getHeight());
             SnapshotParameters snapshotParameters = new SnapshotParameters();
             snapshotParameters.setFill(Color.TRANSPARENT);

@@ -57,24 +57,21 @@ public class MainController implements Initializable {
     @FXML
     public VBox center;
 
-    /**
-     * 打开MySQL窗口
-     *
-     * @throws Exception
-     */
     public void mysql() throws Exception {
         Parent mysql = FXMLLoader.load(ResourceUtil.getResource("fxml/connect.fxml"), LanguageUtil.resourceBundle);
         Stage stage = new Stage();
         stage.setResizable(false);
         stage.setTitle("连接MySQL");
         Scene scene = new Scene(mysql);
+        UiUtil.setCss(scene);
+        UiUtil.setIcon(scene);
         stage.getIcons().add(new Image(ResourceUtil.getInputStream("img/logo.png")));
         stage.setScene(scene);
         stage.show();
     }
 
     public void about() {
-
+        UiUtil.alert(null, "By Minli", Alert.AlertType.INFORMATION);
     }
 
     @Override

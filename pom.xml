@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>ml.minli</groupId>
-    <artifactId>database-manage</artifactId>
+    <artifactId>database-manage-${jar.suffix}</artifactId>
     <version>1.0</version>
 
     <properties>
@@ -17,7 +17,9 @@
         <ikonli.version>12.3.1</ikonli.version>
         <mysql.connector.version>8.0.28</mysql.connector.version>
         <fastjson.version>1.2.79</fastjson.version>
+        <maven.compiler.version>3.10.1</maven.compiler.version>
         <maven.shade.version>3.2.4</maven.shade.version>
+        <maven.deploy.version>3.0.0-M2</maven.deploy.version>
     </properties>
 
     <distributionManagement>
@@ -66,8 +68,42 @@
         </dependency>
     </dependencies>
 
+    <profiles>
+        <profile>
+            <id>windows</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <jar.suffix>windows</jar.suffix>
+            </properties>
+        </profile>
+        <profile>
+            <id>linux</id>
+            <properties>
+                <jar.suffix>linux</jar.suffix>
+            </properties>
+        </profile>
+        <profile>
+            <id>macos</id>
+            <properties>
+                <jar.suffix>macos</jar.suffix>
+            </properties>
+        </profile>
+    </profiles>
+
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.compiler.version}</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>${maven.deploy.version}</version>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>

@@ -33,10 +33,10 @@ public class ConfigUtil {
                 configIsExist = true;
             }
         } else {
-            throw new Exception("目录创建失败");
+            throw new Exception("Create directory failure!");
         }
         if (!configIsExist) {
-            throw new Exception("配置创建失败");
+            throw new Exception("Create config failure!");
         }
         ScheduledExecutorService scheduledExecutorService = Executors
                 .newSingleThreadScheduledExecutor();

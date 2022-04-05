@@ -45,7 +45,7 @@ public class DatabaseUtil {
             return resultSet;
         } catch (SQLException e) {
             e.printStackTrace();
-            UiUtil.AlertException(e);
+            UiUtil.alertException(e);
             return null;
         }
     }
@@ -62,7 +62,7 @@ public class DatabaseUtil {
             return resultSet;
         } catch (SQLException e) {
             e.printStackTrace();
-            UiUtil.AlertException(e);
+            UiUtil.alertException(e);
             return null;
         }
     }
