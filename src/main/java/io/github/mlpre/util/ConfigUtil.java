@@ -1,4 +1,4 @@
-package ml.minli.util;
+package io.github.mlpre.util;
 
 import java.io.File;
 import java.io.FileOutputStream;

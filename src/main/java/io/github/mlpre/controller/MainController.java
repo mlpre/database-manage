@@ -1,5 +1,6 @@
-package ml.minli.controller;
+package io.github.mlpre.controller;
 
+import io.github.mlpre.util.*;
 import javafx.application.Platform;
 import javafx.beans.binding.Bindings;
 import javafx.beans.binding.NumberBinding;
@@ -22,9 +23,8 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import ml.minli.model.Database;
-import ml.minli.model.DatabaseItem;
-import ml.minli.util.*;
+import io.github.mlpre.model.Database;
+import io.github.mlpre.model.DatabaseItem;
 import org.kordamp.ikonli.fontawesome5.FontAwesomeSolid;
 import org.kordamp.ikonli.javafx.FontIcon;
 

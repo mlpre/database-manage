@@ -1,4 +1,4 @@
-package ml.minli.util;
+package io.github.mlpre.util;
 
 import javafx.application.Platform;
 import javafx.scene.Node;

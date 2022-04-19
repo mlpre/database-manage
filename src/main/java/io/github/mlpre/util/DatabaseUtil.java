@@ -1,11 +1,11 @@
-package ml.minli.util;
+package io.github.mlpre.util;
 
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.TypeReference;
+import io.github.mlpre.controller.MainController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import ml.minli.controller.MainController;
-import ml.minli.model.Database;
+import io.github.mlpre.model.Database;
 
 import java.sql.*;
 import java.util.*;

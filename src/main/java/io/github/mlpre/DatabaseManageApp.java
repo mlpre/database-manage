@@ -1,5 +1,6 @@
-package ml.minli;
+package io.github.mlpre;
 
+import io.github.mlpre.util.*;
 import javafx.application.Application;
 import javafx.application.Platform;
 import javafx.fxml.FXMLLoader;
@@ -7,10 +8,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 import javafx.stage.Stage;
-import ml.minli.util.ConfigUtil;
-import ml.minli.util.LanguageUtil;
-import ml.minli.util.ResourceUtil;
-import ml.minli.util.UiUtil;
 
 import java.io.FileOutputStream;
 import java.util.Optional;

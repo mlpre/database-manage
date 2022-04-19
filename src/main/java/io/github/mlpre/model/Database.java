@@ -1,6 +1,6 @@
-package ml.minli.model;
+package io.github.mlpre.model;
 
-import ml.minli.util.BaseUtil;
+import io.github.mlpre.util.BaseUtil;
 
 public class Database {
 

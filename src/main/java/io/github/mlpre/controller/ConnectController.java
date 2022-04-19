@@ -1,4 +1,4 @@
-package ml.minli.controller;
+package io.github.mlpre.controller;
 
 import com.mysql.cj.util.StringUtils;
 import javafx.concurrent.Task;
@@ -10,12 +10,12 @@ import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import ml.minli.model.Database;
-import ml.minli.model.DatabaseType;
-import ml.minli.util.DatabaseUtil;
-import ml.minli.util.LanguageUtil;
-import ml.minli.util.UiUtil;
-import ml.minli.util.BaseUtil;
+import io.github.mlpre.model.Database;
+import io.github.mlpre.model.DatabaseType;
+import io.github.mlpre.util.DatabaseUtil;
+import io.github.mlpre.util.LanguageUtil;
+import io.github.mlpre.util.UiUtil;
+import io.github.mlpre.util.BaseUtil;
 import org.kordamp.ikonli.fontawesome5.FontAwesomeRegular;
 import org.kordamp.ikonli.javafx.FontIcon;
 

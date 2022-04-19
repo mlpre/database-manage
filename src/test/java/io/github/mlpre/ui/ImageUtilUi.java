@@ -1,4 +1,4 @@
-package ml.minli.ui;
+package io.github.mlpre.ui;
 
 import javafx.application.Application;
 import javafx.embed.swing.SwingFXUtils;
