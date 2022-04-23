@@ -5,6 +5,5 @@ open module database.manage {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.ikonli.fontawesome5;
     requires java.sql;
-    requires mysql.connector.java;
     requires fastjson;
 }

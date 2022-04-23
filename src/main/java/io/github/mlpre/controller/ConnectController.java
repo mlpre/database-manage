@@ -1,6 +1,5 @@
 package io.github.mlpre.controller;
 
-import com.mysql.cj.util.StringUtils;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -56,7 +55,7 @@ public class ConnectController implements Initializable {
             protected Void call() {
                 try {
                     DatabaseUtil.getConnect(new Database(
-                            StringUtils.isNullOrEmpty(connectName.getText()) ? ip.getText() + "_" + port.getText() : connectName.getText(),
+                            BaseUtil.isEmpty(connectName.getText()) ? ip.getText() + "_" + port.getText() : connectName.getText(),
                             DatabaseType.MySQL.getUrl() + ip.getText(),
                             Integer.parseInt(port.getText()),
                             DatabaseType.MySQL.getDefaultParam(),
@@ -103,7 +102,7 @@ public class ConnectController implements Initializable {
     public synchronized void save() {
         MainController.databaseList.add(
                 new Database(
-                        StringUtils.isNullOrEmpty(connectName.getText()) ? ip.getText() + "_" + port.getText() : connectName.getText(),
+                        BaseUtil.isEmpty(connectName.getText()) ? ip.getText() + "_" + port.getText() : connectName.getText(),
                         DatabaseType.MySQL.getUrl() + ip.getText(),
                         Integer.parseInt(port.getText()),
                         DatabaseType.MySQL.getDefaultParam(),

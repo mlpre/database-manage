@@ -1,5 +1,6 @@
 package io.github.mlpre.controller;
 
+import io.github.mlpre.model.JdbcDriver;
 import io.github.mlpre.util.*;
 import javafx.application.Platform;
 import javafx.beans.binding.Bindings;
@@ -76,6 +77,7 @@ public class MainController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        PluginUtil.loadJdbc(new JdbcDriver("mysql", "mysql-connector-java", "8.0.28", "com.mysql.cj.jdbc.Driver"));
         initProperty();
         databaseList = DatabaseUtil.loadConnectHistory();
         connectHistory.setRoot(new TreeItem<>());
