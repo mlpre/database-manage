@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.Menu?>
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
@@ -47,12 +46,6 @@
                     </menus>
                 </MenuBar>
             </top>
-            <bottom>
-                <ToolBar fx:id="bottom" BorderPane.alignment="CENTER" />
-            </bottom>
-            <right>
-                <ListView fx:id="right" BorderPane.alignment="CENTER" />
-            </right>
             <center>
                 <VBox fx:id="center" BorderPane.alignment="CENTER">
                     <children>

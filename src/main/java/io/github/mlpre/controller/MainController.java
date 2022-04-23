@@ -50,11 +50,7 @@ public class MainController implements Initializable {
     @FXML
     public MenuBar top;
     @FXML
-    public ToolBar bottom;
-    @FXML
     public VBox left;
-    @FXML
-    public ListView<String> right;
     @FXML
     public VBox center;
 
@@ -201,15 +197,11 @@ public class MainController implements Initializable {
     public void initProperty() {
         Platform.runLater(() -> {
             left.minWidthProperty().bind(root.getScene().widthProperty().multiply(0.1));
-            left.maxWidthProperty().bind(root.getScene().widthProperty().multiply(0.4));
-            left.prefWidthProperty().bind(root.getScene().widthProperty().multiply(0.15));
-            right.minWidthProperty().bind(root.getScene().widthProperty().multiply(0.05));
-            right.maxWidthProperty().bind(root.getScene().widthProperty().multiply(0.4));
-            right.prefWidthProperty().bind(root.getScene().widthProperty().multiply(0.1));
+            left.maxWidthProperty().bind(root.getScene().widthProperty().multiply(0.5));
+            left.prefWidthProperty().bind(root.getScene().widthProperty().multiply(0.3));
             sqlText.minHeightProperty().bind(root.getScene().heightProperty().multiply(0.2));
             sqlText.maxHeightProperty().bind(root.getScene().heightProperty().multiply(0.6));
             sqlText.prefHeightProperty().bind(root.getScene().heightProperty().multiply(0.2));
-            bottom.minHeightProperty().bind(root.getScene().heightProperty().multiply(0.02));
         });
 
         left.addEventFilter(MouseEvent.MOUSE_MOVED, event -> {
@@ -217,14 +209,6 @@ public class MainController implements Initializable {
                 left.setCursor(Cursor.E_RESIZE);
             } else {
                 left.setCursor(Cursor.DEFAULT);
-            }
-        });
-
-        right.addEventFilter(MouseEvent.MOUSE_MOVED, event -> {
-            if (event.getX() <= 5) {
-                right.setCursor(Cursor.W_RESIZE);
-            } else {
-                right.setCursor(Cursor.DEFAULT);
             }
         });
 
@@ -242,15 +226,6 @@ public class MainController implements Initializable {
                     left.prefWidthProperty().unbind();
                 }
                 left.setPrefWidth(event.getX());
-            }
-        });
-
-        right.addEventFilter(MouseEvent.MOUSE_DRAGGED, event -> {
-            if (right.getCursor() == Cursor.W_RESIZE) {
-                if (right.prefWidthProperty().isBound()) {
-                    right.prefWidthProperty().unbind();
-                }
-                right.setPrefWidth(right.getWidth() - event.getX());
             }
         });
 

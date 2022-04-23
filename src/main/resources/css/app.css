@@ -1,1 +1,41 @@
-/*TODO*/
+.root {
+    -fx-base: #FFFFFF;
+    -fx-accent: #CCCCCC;
+}
+
+.scroll-bar:vertical > .track-background, .scroll-bar:horizontal > .track-background {
+    -fx-background-color: #F1F1F1;
+    -fx-background-insets: 0;
+}
+
+.scroll-bar:vertical > .thumb, .scroll-bar:horizontal > .thumb {
+    -fx-background-color: #BCBCBC;
+    -fx-background-insets: 0;
+    -fx-background-radius: 1;
+}
+
+.slider > .thumb {
+    -fx-background-color: #5264AE;
+}
+
+.menu-bar, .tool-bar {
+    -fx-background-color: white;
+    -fx-border-color: #F4F4F4;
+    -fx-border-width: 0 0 2 0;
+}
+
+.button {
+    -fx-background-color: #CCCCCC;
+}
+
+.button:hover {
+    -fx-background-color: #DDDDDD;
+}
+
+.button:pressed {
+    -fx-background-color: #999999;
+}
+
+.tree-view:focused, .table-view:focused, .text-input:focused, *.content {
+    -fx-background-color: -fx-box-border, -fx-control-inner-background;
+}
