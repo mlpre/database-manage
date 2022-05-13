@@ -1,4 +1,4 @@
-# DatabaseManage)
+# DatabaseManage
 
 * Programming!
 
