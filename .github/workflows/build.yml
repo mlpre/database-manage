@@ -1,0 +1,23 @@
+name: Maven Package
+
+on: workflow_dispatch
+
+jobs:
+  windows-build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+      - run: mvn package
+      - run: mkdir build
+      - run: cp target/DatabaseManage.jar build/
+      - run: jpackage -i build/ -n DatabaseManage --main-class io.github.mlpre.DatabaseManageApp --main-jar DatabaseManage.jar --vendor io.github.mlpre --icon src/main/resources/img/logo.ico --win-dir-chooser --win-menu --win-per-user-install --win-shortcut --win-shortcut-prompt --win-help-url https://github.com/mlpre/database-manage --win-update-url https://github.com/mlpre/database-manage
+      - run: rm build/*
+      - run: mv DatabaseManage-1.0.exe build/
+      - uses: actions/upload-artifact@v2
+        with:
+          name: DatabaseManage
+          path: build

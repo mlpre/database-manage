@@ -1,7 +1,5 @@
 package io.github.mlpre.util;
 
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.TypeReference;
 import io.github.mlpre.controller.MainController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -89,9 +87,7 @@ public class DatabaseUtil {
         if (properties != null) {
             String databaseConnect = properties.getProperty("database-connect");
             if (databaseConnect != null && !databaseConnect.isEmpty()) {
-                String json = new String(Base64.getDecoder().decode(databaseConnect));
-                List<Database> list = JSON.parseObject(json, new TypeReference<>() {
-                });
+                List<Database> list = ObjectUtil.toList(ObjectUtil.bytesToObject(Base64.getDecoder().decode(databaseConnect)), Database.class);
                 observableList.addAll(list);
             }
         }
@@ -100,8 +96,8 @@ public class DatabaseUtil {
 
     public static void saveConnectHistory() {
         ObservableList<Database> databaseList = MainController.databaseList;
-        String json = JSON.toJSONString(databaseList);
-        ConfigUtil.properties.setProperty("database-connect", Base64.getEncoder().encodeToString(json.getBytes()));
+        List<Database> list = new ArrayList<>(databaseList);
+        ConfigUtil.properties.setProperty("database-connect", Base64.getEncoder().encodeToString(ObjectUtil.objectToBytes(list)));
     }
 
 }

@@ -2,7 +2,9 @@ package io.github.mlpre.model;
 
 import io.github.mlpre.util.BaseUtil;
 
-public class Database {
+import java.io.Serializable;
+
+public class Database implements Serializable {
 
     private String name;
 
